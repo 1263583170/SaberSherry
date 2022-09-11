@@ -1,0 +1,508 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        main page    
+        </title>
+        <style type="text/css">
+          
+          
+          .box-a span {
+        
+        display: block;
+
+        /* 固定 */
+
+        position: absolute;
+
+        /* 绝对定位，目的是为了组成正方体 */
+
+        width: 100px;
+
+        height: 100px;
+
+        top: 50px;
+
+        left: 50px;
+
+    }
+
+    
+
+        .box-a div {
+
+            position: absolute;
+
+            transition: all .4s;
+
+            /* 分散效果在0.4秒内完成 */
+
+        }
+
+        
+
+        .box-a {
+
+            width: 200px;
+
+            height: 200px;
+
+            margin: 200px auto;
+
+            animation: rotate 20s infinite;
+
+            /* 循环周期是20秒，无限循环 */
+
+            transform-style: preserve-3d;
+
+            /* 设置动画效果是在3D空间内进行 */
+
+            animation-timing-function: linear;
+
+            /* 设置动画的速度是匀速进行 */
+
+        }
+
+        
+
+        div .in-img {
+
+            width: 100px;
+
+            height: 100px;
+
+        }
+
+        
+
+        div .out-img {
+
+            width: 200px;
+
+            height: 200px;
+
+        }
+
+        
+
+        @keyframes rotate {
+
+            from {
+
+                transform: rotateX(0deg) rotateY(0deg);
+
+            }
+
+            to {
+
+                transform: rotateX(360deg) rotateY(360deg);
+
+            }
+
+        }
+
+        /* 通过选装照片的角度 组装外层的正方体的6个面的图片 */
+
+        
+
+        #in-front {
+
+            transform: translateZ(50px);
+
+        }
+
+        
+
+        #in-back {
+
+            transform: translateZ(-50px);
+
+        }
+
+        
+
+        #in-left {
+
+            transform: rotateY(90deg) translateZ(50px);
+
+        }
+
+        
+
+        #in-right {
+
+            transform: rotateY(-90deg) translateZ(50px);
+
+        }
+
+        
+
+        #in-top {
+
+            transform: rotateX(90deg) translateZ(50px);
+
+        }
+
+        
+
+        #in-bottom {
+
+            transform: rotateX(-90deg) translateZ(50px);
+
+        }
+
+        /* 通过选装照片的角度 组装外层的正方体的6个面的图片 */
+
+        
+
+        .out-front {
+
+            transform: translateZ(100px);
+
+        }
+
+        
+
+        .out-back {
+
+            transform: translateZ(-100px);
+
+        }
+
+        
+
+        .out-left {
+
+            transform: rotateY(90deg) translateZ(100px);
+
+        }
+
+        
+
+        .out-right {
+
+            transform: rotateY(-90deg) translateZ(100px);
+
+        }
+
+        
+
+        .out-top {
+
+            transform: rotateX(90deg) translateZ(100px);
+
+        }
+
+        
+
+        .out-bottom {
+
+            transform: rotateX(-90deg) translateZ(100px);
+
+        }
+
+        /* 增加动态分散效果， */
+
+        
+
+        .box-a:hover .out-front {
+
+            transform: translateZ(200px);
+
+        }
+
+        
+
+        .box-a:hover .out-back {
+
+            transform: translateZ(-200px);
+
+        }
+
+        
+
+        .box-a:hover .out-left {
+
+            transform: rotateY(90deg) translateZ(200px);
+
+        }
+
+        
+
+        .box-a:hover .out-right {
+
+            transform: rotateY(-90deg) translateZ(200px);
+
+        }
+
+        
+
+        .box-a:hover .out-top {
+
+            transform: rotateX(90deg) translateZ(200px);
+
+        }
+
+        
+
+        .box-a:hover .out-bottom {
+
+            transform: rotateX(-90deg) translateZ(200px);
+
+        }
+          
+
+          
+          
+          .mainpage
+          {
+            /* background:url(2.png) no-repeat;
+            background-size:cover; */
+            background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+            height: 100%;
+            width: 100%;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .centerpage
+          {
+            /* background:url(4.jpeg) no-repeat; 
+            border:1px solid rgb(132, 208, 238); */
+            /* background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%); */
+            width: 400px;
+            height: 800px;
+            color:rgb(0, 0, 0);
+          }
+          hr
+          {
+            height: 1px;
+            background-color:cyan;
+          }
+          /* background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%); */
+          .centerpage
+          {
+            /* background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%); */
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div class="mainpage">
+            
+          
+          
+          <div class="box-a">
+    
+            <!-- 插入内层立方体的6个面的图片 -->
+    
+            <span id="in-front">
+    
+                    <img src="13.jpeg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-back">
+    
+                    <img src="13.jpeg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-left">
+    
+                    <img src="13.jpeg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-right">
+    
+                    <img src="13.jpeg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-top">
+    
+                    <img src="13.jpeg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-bottom">
+    
+                    <img src="13.jpeg" class="in-img" >
+    
+                </span>
+    
+            <!-- 插入外层的6个图片 -->
+    
+            <!-- 为了方便的后面的动态效果，这里不用span，改用div -->
+    
+            <div class="out-front">
+    
+                <img src="12.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-back">
+    
+                <img src="12.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-left">
+    
+                <img src="12.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-right">
+    
+                <img src="12.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-top">
+    
+                <img src="12.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-bottom">
+    
+                <img src="12.jpg" class="out-img">
+    
+            </div>
+    
+        </div>  
+
+
+
+
+          <div class="centerpage">
+              <div class="info">
+              <h1>个人信息</h1>
+              <hr>
+              姓名：代庆瑞<p>
+              学号：20101080303<p>
+              性别：男<p>
+              照片：
+              <img src="3.jpg" width="120px" height="100px">
+              </div>
+              
+              <div class="ITP">
+              <h1>专业信息</h1>
+              <hr>
+              专业：计算机科学与技术<p>
+              班级：计科203班<p>
+              </div>
+              
+              <div class="other">
+              <h1>其他信息</h1>
+              <hr>
+              爱好：游戏，后端，电影<p>
+              联系方式：13540060492
+              <br>
+              <h2>⟵⟵ 我的爱豆Aimer⟶⟶</h2>
+              </div>
+            </div>
+
+
+
+            <div class="box-a">
+    
+            <!-- 插入内层立方体的6个面的图片 -->
+    
+            <span id="in-front">
+    
+                    <img src="15.jpg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-back">
+    
+                    <img src="15.jpg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-left">
+    
+                    <img src="15.jpg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-right">
+    
+                    <img src="15.jpg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-top">
+    
+                    <img src="15.jpg" class="in-img" >
+    
+                </span>
+    
+            <span id="in-bottom">
+    
+                    <img src="15.jpg" class="in-img" >
+    
+                </span>
+    
+            <!-- 插入外层的6个图片 -->
+    
+            <!-- 为了方便的后面的动态效果，这里不用span，改用div -->
+    
+            <div class="out-front">
+    
+                <img src="14.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-back">
+    
+                <img src="14.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-left">
+    
+                <img src="14.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-right">
+    
+                <img src="14.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-top">
+    
+                <img src="14.jpg" class="out-img">
+    
+            </div>
+    
+            <div class="out-bottom">
+    
+                <img src="14.jpg" class="out-img">
+    
+            </div>
+    
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+         
+    </body>
+</html>
